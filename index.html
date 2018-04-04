@@ -269,26 +269,96 @@
     <header><h2>Neuen Autor registrieren</h2></header>
 
     <form>
-        --Autor--
-        Herr X Frau O
-        Name [ ]
-        E-Mail [ ]
-        Webseite [ ]
-        Geburtsdatum [ ]
-        Nationalität [ -- Wählen -- v]
-        Switzerland
-        Deutschland
-        Frankreich
-        Italien
-        Österreich
-        Profiltext [ ]
-        Profilbilder [ Browse ]
-        --Rechtliches--
-        [ ] Ich bestätige, das ich keine Texte veröffentlichen werde, deren Urheber ich nicht bin
-        [ ] Ich bestätige, das ich keine Medien veröffentlichen werden, deren Urheber ich nicht bin
-        [ ] Ich bestätige, das nur Texte veröffentlichen werde, die nach bestem Treu und glauben der Wahrheit entsprechen und
-        eingereichte Medien Bilder nicht manipuliert wurden
+        <fieldset>
+            <legend>Autor</legend>
+            <ul>
+                <li>
+                    <label>
+                         <input type="radio" id="" name="gender-m" value="Herr">
+                         Herr
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="gender-f" value="Frau" />
+                        Frau
+                    </label>
+                </li>
+                <li>
+                    <label for="name">
+                        Name<br>
+                        <input type="text" name="name" >
+                    </label>
+                </li>
+                <li>
+                    <label for="mail">
+                        E-Mail<br>
+                        <input type="text" name="name" >
+                    </label>
+                </li>
+                <li>
+                    <label for="website">
+                        Webseite<br>
+                        <input type="text" name="name" >
+                    </label>
+                </li>
+                <li>
+                    <label for="birthdate">
+                        Geburtsdatum<br>
+                        <input type="text" name="name" >
+                    </label>
+                </li>
+                <li>
+                    <label for="nationality">
+                        Nationalität<br>
+                        <select id="nationality" name="nationality-select">
+                            <option selected disabled hidden>--Wählen--</option>
+                            <option>Switzerland</option>
+                            <option>Deutschland</option>
+                            <option>Frankreich</option>
+                            <option>Italien</option>
+                            <option>Österreich</option>
+                        </select>
+                    </label>
+                </li>
+                <li>
+                    <label for="profiltext">
+                        Profiltext<br>
+                        <textarea name="comment" form="profiltext"></textarea>
+                    </label>
+                </li>
 
+                <li>
+                    <label for="pic">
+                        <input name="datei" type="file" size="50" accept="image/*" multiple>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Rechtliches</legend>
+            <ul>
+                <li>
+                    <label for="copyright-text">
+                        <input type="checkbox" id="cr-text" name="gender-m" value="Herr">
+                        Ich bestätige, das ich keine Texte veröffentlichen werde, deren Urheber ich nicht bin
+                    </label>
+                </li>
+                <li>
+                    <label for="copyright-pic">
+                        <input type="checkbox" id="cr-pic" name="gender-m" value="Herr">
+                        Ich bestätige, das ich keine Medien veröffentlichen werden, deren Urheber ich nicht bin
+                    </label>
+                </li>
+                <li>
+                    <label for="swear-told-truth">
+                        <input type="checkbox" id="truth" name="gender-m" value="Herr">
+                        Ich bestätige, das nur Texte veröffentlichen werde, die nach bestem Treu und glauben der Wahrheit entsprechen und
+                        eingereichte Medien Bilder nicht manipuliert wurden
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
         [Account anlegen]
         [Eingaben zurücksetzen]
     </form>
