@@ -6,6 +6,37 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+
+	/*colors*/
+	--main-blue: rgb(0, 96, 160);
+}
+
+
+
+
+/*Header*/
+h1 {
+	box-sizing: border-box;
+	color: white;
+	background: var(--main-blue);
+	padding: 1rem;
+	margin: 0 -3rem 1rem -1rem;
+}
+
+#logo{
+	float: left;
+	position: relative;
+	top: 8px;
+	width: 70px;
+	height: 70px;
+	margin-left: 5px;
+	margin-right: 14px;
+}
+
+/*Navigation/Menü*/
+ul {
+	border: 1px solid var(--main-blue);
+	background-color:
 }
 
 /* document */
