@@ -93,3 +93,9 @@ nav ul {
 	padding: 0; margin: 0;
 }
 
+/* iframe - calculator */
+#calculator {
+	width:400px;
+	height:425px;
+
+}

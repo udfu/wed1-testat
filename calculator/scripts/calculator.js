@@ -1,15 +1,17 @@
 /**
  * core
  */
-
-
+function transportKey(typ,val){
+    alert(val);
+}
 
 
 /**
  * UI
  */
-window.addEventListener('load', function() {
+
+//window.addEventListener('load', function() {
 
 
 
-});
+//});
