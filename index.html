@@ -278,38 +278,38 @@
             <ul>
                 <li>
                     <label>
-                         <input type="radio" id="" name="gender-m" value="Herr">
+                         <input type="radio" id="" name="gender" value="Herr">
                          Herr
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="gender-f" value="Frau" />
+                        <input type="radio" name="gender" value="Frau" />
                         Frau
                     </label>
                 </li>
                 <li>
                     <label for="name">
                         Name<br>
-                        <input type="text" name="name" >
+                        <input type="text" name="name" pattern="[a-zA-Z]{3,}">
                     </label>
                 </li>
                 <li>
                     <label for="mail">
                         E-Mail<br>
-                        <input type="text" name="mail" >
+                        <input type="text" name="mail" pattern=".*@.*\.[a-z]{2,4}">
                     </label>
                 </li>
                 <li>
                     <label for="website">
                         Webseite<br>
-                        <input type="text" name="website" >
+                        <input type="text" name="website" pattern="(http://|https://|http://www\.|https://www\.).*\.[a-z]{2,4}">
                     </label>
                 </li>
                 <li>
                     <label for="birthdate">
                         Geburtsdatum<br>
-                        <input type="text" name="birthdate" >
+                        <input type="text" name="birthdate" pattern="([1-9]|[1-2][0-9]|30|31)\.([1-9]|1[0-2])\.(19[0-9]{2}|20[0-1][0-9])">
                     </label>
                 </li>
                 <li>
