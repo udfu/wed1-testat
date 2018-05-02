@@ -1,4 +1,3 @@
-
 /**
  * core
  */
@@ -6,7 +5,7 @@ var numbers = [];
 var operators = [];
 
 
-function transportKey(val,typ){
+function transportKey(val,typ,id){
     console.log(val +" "+  typ);
     var inputElement = document.getElementById('input');
     var outputElement = document.getElementById('output');
@@ -18,19 +17,24 @@ function transportKey(val,typ){
         document.formsdocument.getElementById('output').value = "";
     }*/
 
-    if(typ == "op"){
-        if(val== '='){
+    if(typ == "command") {
+        if (id == 'key-=') {
+            console.log(typ + " " + val);
             numbers.push(Number(input));
-            calc();
+            calc(outputElement);
             inputElement.value = " ";
             numbers.length = 100;
             operators.length = 0;
-        } else if(val == "c"){
+        } else if (id == 'key-c') {
+            console.log(typ + " " + val);
             inputElement.value = " ";
             outputElement.value = " ";
             numbers.length = 0;
             operators.length = 0;
-        } else if(input != null || output != null) {
+        }
+    }
+    if(typ == "operator"){
+        if(input != null || output != null) {
             console.log("array len: " + numbers.length + " input: " + input + " output: " + output);
             if(numbers.length==100){
                 numbers.length = 0;
@@ -51,9 +55,7 @@ function transportKey(val,typ){
     }
 }
 
-function calc() {
-    var outputElement = document.getElementById('output');
-
+function calc(outputElement) {
     var output;
 
     if(numbers.length > 1 && operators.length > 0){
@@ -86,18 +88,19 @@ function calc() {
  */
 
 const initApp = function () {
+
     var buttons = document.getElementsByTagName('button');
-    var input = document.getElementById('input');
-    var output = document.getElementById('output');
+    var outputElement = document.getElementById('output');
+
+    if(!outputElement.value){
+        outputElement.value = 'WELCOME';
+    }
 
     for (var i = 0, len = buttons.length; i < len; i++) {
         buttons[i].onclick = function (){
-            transportKey (this.value,this.className);
+            transportKey (this.value,this.className,this.id);
         }
     }
 };
 
 window.addEventListener('load', initApp);
-
-
-
