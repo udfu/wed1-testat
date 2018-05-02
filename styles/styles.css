@@ -1,127 +1,154 @@
 /* reset */
-*  {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-	margin: 0;
-	padding-left: 3px;
-	padding-right: 3px;
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding-left: 3px;
+    padding-right: 3px;
 
-	/*colors*/
-	--main-blue: rgb(0, 96, 160);
+
+    /*colors*/
+    --main-blue: rgb(0, 96, 160);
 }
-
-
-
 
 /*Header*/
 h1 {
-	color: white;
-	background: var(--main-blue);
-	padding: 1rem;
-	margin: 0 -3rem 1rem -1rem;
+    color: white;
+    background: var(--main-blue);
+    padding: 1rem;
+    margin: 0 -3rem 1rem -1rem;
 }
 
-h3{
-
+h2 {
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 
-#logo{
-	float: left;
-	position: relative;
-	top: 8px;
-	width: 80px;
-	height: 70px;
-	margin-left: 5px;
-	margin-right: 14px;
+h3:before {
+    counter-increment: article;
+    content: counter(article) " ";
+}
+
+h3 {
+    border-bottom: 1px solid black;
+    margin-top: 18px;
+    margin-bottom: 12px;
 }
 
 /*Navigation/Menü*/
 nav {
-	border: 1px solid var(--main-blue);
-	background-color:#F2F3F4;
-	margin-left: 2px;
-	margin-right: 2px;
-	list-style: none;
-	padding-left: 7px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+    border: 1px solid var(--main-blue);
+    background-color: #F2F3F4;
+    margin-left: 2px;
+    margin-right: 2px;
+    list-style: none;
+    padding-left: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-nav a{
-	color: var(--main-blue);
+nav a {
+    color: var(--main-blue);
 }
 
-#italiano::before{
-	background-image: url('../media/flag-it.svg');
-	width: 1rem;
-	height: 0.75rem;
-	content: "";
-	display: inline-block;
-	background-size: 1rem 0.75rem;
+#italiano::before {
+    background-image: url('../media/flag-it.svg');
+    width: 1rem;
+    height: 0.75rem;
+    content: "";
+    display: inline-block;
+    background-size: 1rem 0.75rem;
 }
 
-#francais::before{
-	background-image: url('../media/flag-fr.svg');
-	width: 1rem;
-	height: 0.75rem;
-	content: "";
-	display: inline-block;
-	background-size: 1rem 0.75rem;
+#francais::before {
+    background-image: url('../media/flag-fr.svg');
+    width: 1rem;
+    height: 0.75rem;
+    content: "";
+    display: inline-block;
+    background-size: 1rem 0.75rem;
 }
 
-#english::before{
-	background-image: url('../media/flag-en.svg');
-	width: 1rem;
-	height: 0.75rem;
-	content: "";
-	display: inline-block;
-	background-size: 1rem 0.75rem;
+#english::before {
+    background-image: url('../media/flag-en.svg');
+    width: 1rem;
+    height: 0.75rem;
+    content: "";
+    display: inline-block;
+    background-size: 1rem 0.75rem;
 }
 
 /* document */
 body {
-	font-size: 1rem;
-	font-family: "URW Gothic L", "Helvetica", "Arial", sans-serif;
+    font-size: 1rem;
+    font-family: "URW Gothic L", "Helvetica", "Arial", sans-serif;
+    counter-reset: article;
 }
 
-
-
 /* images */
+figure{
+    box-sizing: border-box;
+    float: left;
+    width: 200px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
 
+figcaption{
+    color: lightgray;
+    font-size: 0.60em;
+    box-sizing: border-box;
+    width: 170px;
+}
 
+#typewriter {
+
+    height: auto;
+    width: 200px;
+
+}
+
+#logo {
+    float: left;
+    position: relative;
+    top: 8px;
+    width: 80px;
+    height: 70px;
+    margin-left: 5px;
+    margin-right: 14px;
+}
 
 /* text */
-
-
+p {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
 
 /* lists */
 nav ul {
-	list-style-type: none;
+    list-style-type: none;
 }
-
 
 /* table */
 
-
-
 /* forms */
 
-
-
 #font-size-form {
-	float: right;
+    float: right;
 }
+
 #font-size-form > label, #font-size-form > input, #font-size-form > output {
-	display: inline-block;
-	vertical-align: middle;
-	padding: 0; margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
 }
 
 /* iframe - calculator */
 #calculator {
-	width:400px;
-	height:425px;
+    width: 400px;
+    height: 425px;
 
 }
