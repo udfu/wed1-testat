@@ -6,52 +6,9 @@
 		<link rel="stylesheet" href="styles/style.css" />
 
 		<script src="scripts/calculator.js"></script>
-		<!--
-		<script type="text/javascript">
-			var tempCalc1;
-            var tempCalc2;
-            var operator;
-
-            function transportKey(typ,val)
-            {
-                var input = document.forms["calc_keyboard"]["input"].value;
-                var output = document.forms["calc_keyboard"]["output"].value;
-
-                if(output == 'WELCOME'){
-                    document.forms["calc_keyboard"]["output"].value = "";
-				}
-
-				if(typ == "op"){
-                    if(val== '='){
-                        tempCalc2 = input;
-                        alert(tempCalc1 + " " + operator + " " + tempCalc2);
-                        calc()
-					}
-                    if(input != null) {
-                        tempCalc1 = input;
-                        operator = val;
-                        document.forms["calc_keyboard"]["input"].value = "";
-                        document.forms["calc_keyboard"]["output"].value = input + val;
-                    }
-				} else {
-                    if(input!=null){
-                    	document.forms["calc_keyboard"]["input"].value = input + val;
-                    } else {
-                        document.forms["calc_keyboard"]["input"].value = val;
-					}
-				}
-            }
-            function calc() {
-				if(tempCalc1 && tempCalc2 && operator){
-                    alert(tempCalc1 + " " + operator + " " + tempCalc2);
-                } else {
-                    document.forms["calc_keyboard"]["output"].value = "Invalid Operation"
-				}
-			}
-		</script>
-		-->
 	</head>
 	<body>
+	<!-- old
 		<form id="calc_keyboard">
 			<fieldset class="display">
 				<output name="output" id="output" class="output">WELCOME</output>
@@ -79,6 +36,34 @@
 				<button type="button" name="key-=" id="key-=" class="command" value="=" onclick="transportKey('op',this.value)">&equals;</button>
 				<button type="button" name="key-/" id="key-/" class="operator" value="/"  onclick="transportKey('op',this.value)">&divide;</button>
 			</fieldset>
-		</form>
+		</form>-->
+	<form>
+		<fieldset class="display">
+			<output name="output" id="output" class="output"></output>
+			<output name="input" id="input" class="input"></output>
+		</fieldset>
+
+		<fieldset>
+			<button type="button" name="key-0" id="key-0" class="number" value="0">0</button>
+			<button type="button" name="key-1" id="key-1" class="number" value="1">1</button>
+			<button type="button" name="key-2" id="key-2" class="number" value="2">2</button>
+			<button type="button" name="key-+" id="key-+" value="+" class="operator">&plus;</button>
+
+			<button type="button" name="key-3" id="key-3" class="number" value="3">3</button>
+			<button type="button" name="key-4" id="key-4" class="number" value="4">4</button>
+			<button type="button" name="key-5" id="key-5" class="number" value="5">5</button>
+			<button type="button" name="key--" id="key--" value="-" class="operator">&minus;</button>
+
+			<button type="button" name="key-6" id="key-6" class="number" value="6">6</button>
+			<button type="button" name="key-7" id="key-7" class="number" value="7">7</button>
+			<button type="button" name="key-8" id="key-8" class="number" value="8">8</button>
+			<button type="button" name="key-*" id="key-*" value="*" class="operator">&lowast;</button>
+
+			<button type="button" name="key-9" id="key-9" class="number" value="9">9</button>
+			<button type="button" name="key-c" id="key-c" class="command">C</button>
+			<button type="button" name="key-=" id="key-=" class="command">&equals;</button>
+			<button type="button" name="key-/" id="key-/" value="/" class="operator">&divide;</button>
+		</fieldset>
+	</form>
 	</body>
 </html>

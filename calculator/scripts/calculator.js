@@ -1,47 +1,63 @@
+/**
+ * core
+ */
 var numbers = [];
 var operators = [];
 
-function transportKey(typ,val)
-{
-    var input = document.forms["calc_keyboard"]["input"].value;
-    var output = document.forms["calc_keyboard"]["output"].value;
 
-    console.log("Length number array: " + numbers.length + " Length operator array: " + operators.length);
-    if(output == 'WELCOME'){
-        document.forms["calc_keyboard"]["output"].value = "";
-    }
+function transportKey(val,typ,id){
+    console.log(val +" "+  typ);
+    var inputElement = document.getElementById('input');
+    var outputElement = document.getElementById('output');
 
-    if(typ == "op"){
-        if(val== '='){
+    var output = outputElement.value;
+    var input = inputElement.value;
+
+    /*if(output == 'WELCOME'){
+        document.formsdocument.getElementById('output').value = "";
+    }*/
+
+    if(typ == "command") {
+        if (id == 'key-=') {
+            console.log(typ + " " + val);
             numbers.push(Number(input));
-            console.log("Jetzt wird gerechnet.... ");
-            calc();
-            document.forms["calc_keyboard"]["input"].value = " ";
+            calc(outputElement);
+            inputElement.value = " ";
+            numbers.length = 100;
+            operators.length = 0;
+        } else if (id == 'key-c') {
+            console.log(typ + " " + val);
+            inputElement.value = " ";
+            outputElement.value = " ";
             numbers.length = 0;
             operators.length = 0;
-        } else if(val == "c"){
-            console.log("Clean all.... ");
-            document.forms["calc_keyboard"]["input"].value = " ";
-            document.forms["calc_keyboard"]["output"].value = " ";
-            numbers.length = 0;
-            operators.length = 0;
-        } else if(input != null) {
+        }
+    }
+    if(typ == "operator"){
+        if(input != null || output != null) {
+            console.log("array len: " + numbers.length + " input: " + input + " output: " + output);
+            if(numbers.length==100){
+                numbers.length = 0;
+                inputElement.value = outputElement.value;
+                input = output;
+            }
             numbers.push(Number(input));
             operators.push(val);
-            document.forms["calc_keyboard"]["input"].value = " ";
-            document.forms["calc_keyboard"]["output"].value = input + val;
+            inputElement.value = " ";
+            outputElement.value = input + val;
         }
     } else {
         if(input!=null){
-            document.forms["calc_keyboard"]["input"].value = input + val;
+            inputElement.value = input + val;
         } else {
-            document.forms["calc_keyboard"]["input"].value = val;
+            inputElement.value = val;
         }
     }
 }
-function calc() {
-    console.log("Jetzt wird gerechnet in der Funktion calc() ....  Los los ");
+
+function calc(outputElement) {
     var output;
+
     if(numbers.length > 1 && operators.length > 0){
         if(numbers.length == 2 & operators.length ==1){
             switch(operators[0]) {
@@ -61,21 +77,30 @@ function calc() {
                     output = "Invalid Operation";
             }
         }
-        console.log("Folgender output berechnet aus : " + numbers[0] + " und " + numbers[1] + " ergibt via " + operators[0] + " folgendes Resultat " + output )
-        document.forms["calc_keyboard"]["output"].value = output;
+        outputElement.value = output;
     } else {
-        document.forms["calc_keyboard"]["output"].value = "Invalid Operation"
+        outputElement.value = "Invalid Operation"
     }
 }
-
-
 
 /**
  * UI
  */
 
-//window.addEventListener('load', function() {
+const initApp = function () {
 
+    var buttons = document.getElementsByTagName('button');
+    var outputElement = document.getElementById('output');
 
+    if(!outputElement.value){
+        outputElement.value = 'WELCOME';
+    }
 
-//});
+    for (var i = 0, len = buttons.length; i < len; i++) {
+        buttons[i].onclick = function (){
+            transportKey (this.value,this.className,this.id);
+        }
+    }
+};
+
+window.addEventListener('load', initApp);
