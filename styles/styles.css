@@ -87,8 +87,12 @@ body {
     counter-reset: article;
 }
 
+a{
+    color: black;
+}
+
 /* images */
-figure{
+#marchant-calculator{
     box-sizing: border-box;
     float: left;
     width: 200px;
@@ -96,18 +100,19 @@ figure{
     margin-bottom: 20px;
 }
 
-figcaption{
-    color: lightgray;
-    font-size: 0.60em;
+#marchant-calculator figcaption{
     box-sizing: border-box;
     width: 170px;
 }
 
-#typewriter {
-
+#marchant-calculator img {
     height: auto;
     width: 200px;
+}
 
+figcaption{
+    color: lightgray;
+    font-size: 0.60em;
 }
 
 #logo {
@@ -124,6 +129,25 @@ figcaption{
 p {
     margin-top: 7px;
     margin-bottom: 7px;
+}
+
+.changes{
+    border: 1px dotted black;
+    display: inline-block;
+    width: 100%
+}
+
+.changes span:first-child{
+    float: left;
+}
+
+.changes span:last-child{
+    float: right;
+}
+
+
+.small {
+    font-size: smaller;
 }
 
 /* lists */
