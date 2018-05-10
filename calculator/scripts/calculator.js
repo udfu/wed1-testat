@@ -1,12 +1,37 @@
 /**
  * core
  */
-"use strict";
 var numbers = [];
 var operator;
 
+function calc() {
+    "use strict";
+    var output;
+    if(numbers.length > 1 && operator !== ''){
+        switch(operator) {
+            case "+":
+                output = numbers[0] + numbers[1];
+                break;
+            case "-":
+                output = numbers[0] - numbers[1];
+                break;
+            case "*":
+                output = numbers[0] * numbers[1];
+                break;
+            case "/":
+                output = numbers[0] / numbers[1];
+                break;
+            default:
+                output = "Invalid Operation";
+        }
+        return output;
+    } else {
+        return "Invalid Operation";
+    }
+}
 
 function transportKey(val,typ,id){
+    "use strict";
     var inputElement = document.getElementById('input');
     var outputElement = document.getElementById('output');
     var output = outputElement.value;
@@ -17,9 +42,7 @@ function transportKey(val,typ,id){
     }
 
     if(typ === "command") {
-        console.log("array len: " + numbers.length + " input: " + input + " output: " + output);
         if (id === 'key-=') {
-            console.log("= " + typ);
             numbers.push(Number(input));
             if(numbers.length>=2){
                 outputElement.value = '';
@@ -36,14 +59,11 @@ function transportKey(val,typ,id){
             outputElement.value = '';
             numbers.length = 0;
             operator = '';
-            console.log("c " + typ + " input: '" + inputElement.value + "' output: " + outputElement.value);
         }
         return;
     }
     if(typ === "operator"){
-        console.log(val +" "+  typ);
-        if(input != '' && numbers.length == 0) {
-            console.log("array len: " + numbers.length + " input: " + input + " output: " + output);
+        if(input !== '' && numbers.length === 0) {
             numbers.push(Number(input));
             operator = val;
             inputElement.value = '';
@@ -51,12 +71,12 @@ function transportKey(val,typ,id){
         } else if(numbers.length > 0){
             operator = val;
             outputElement.value = numbers[0] + val;
-        } else if (numbers.length == 0 && input == ''){
+        } else if (numbers.length === 0 && input === ''){
             operator = val;
             outputElement.value = val;
         }
     } else {
-        if(input!=''){
+        if(input!== ''){
             inputElement.value = input + val;
         } else {
             inputElement.value = val;
@@ -64,49 +84,31 @@ function transportKey(val,typ,id){
     }
 }
 
-function calc() {
-    var output;
-    if(numbers.length > 1 && operator != ''){
-            switch(operator) {
-                case "+":
-                    output = numbers[0] + numbers[1];
-                    break;
-                case "-":
-                    output = numbers[0] - numbers[1];
-                    break;
-                case "*":
-                    output = numbers[0] * numbers[1];
-                    break;
-                case "/":
-                    output = numbers[0] / numbers[1];
-                    break;
-                default:
-                    output = "Invalid Operation";
-            }
-        return output;
-    } else {
-        return "Invalid Operation";
-    }
-}
-
 /**
  * UI
  */
-
 const initApp = function () {
     "use strict";
-    var buttons = document.getElementsByTagName('button');
-    var outputElement = document.getElementById('output');
+    const buttons = document.getElementsByTagName('button');
+    const outputElement = document.getElementById('output');
 
     if(!outputElement.value) {
         outputElement.value = 'WELCOME';
     }
 
+    function test()  {
+        /*jshint validthis: true */
+        transportKey(this.value,this.className ,this.id);
+    }
+
     for (var i = 0, len = buttons.length; i < len; i++) {
+        buttons[i].addEventListener('click',test);
+    }
+    /*for (var i = 0, len = buttons.length; i < len; i++) {
         buttons[i].onclick = function (){
             transportKey (this.value,this.className,this.id);
-        }
-    }
+        };
+    }*/
 };
 
 window.addEventListener('load', initApp);
