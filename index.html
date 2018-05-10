@@ -384,44 +384,44 @@
             <ul>
                 <li>
                     <label>
-                        <input type="radio" id="" name="gender-m" value="Herr">
+                        <input type="radio" id="" name="gender" value="Herr">
                         Herr
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="radio" name="gender-f" value="Frau"/>
+                        <input type="radio" name="gender" value="Frau"/>
                         Frau
                     </label>
                 </li>
                 <li>
                     <label id="name">
                         Name<br>
-                        <input type="text" name="name">
+                        <input class="textbox" type="text" name="name">
                     </label>
                 </li>
                 <li>
                     <label id="mail">
                         E-Mail<br>
-                        <input type="text" name="mail">
+                        <input class="textbox" type="text" name="mail">
                     </label>
                 </li>
                 <li>
                     <label id="website">
                         Webseite<br>
-                        <input type="text" name="website">
+                        <input class="textbox" type="text" name="website" pattern="((http://)|(https://)|(http://www\.)|(https://www\.)).*\..{2,3}">
                     </label>
                 </li>
                 <li>
                     <label id="birthdate">
                         Geburtsdatum<br>
-                        <input type="text" name="birthdate">
+                        <input class="textbox" type="text" name="birthdate">
                     </label>
                 </li>
                 <li>
                     <label for="nationality">
                         Nationalität<br>
-                        <select id="nationality" name="nationality-select">
+                        <select id="nationality" name="nationality-select" >
                             <option selected disabled hidden>--Wählen--</option>
                             <option>Switzerland</option>
                             <option>Deutschland</option>
@@ -470,10 +470,10 @@
                 </li>
             </ul>
         </fieldset>
-    </form>
-    <button type="submit" value="Submit">Account anlegen</button>
-    <button>Eingaben zurücksetzen</button>
 
+        <button type="submit" value="Submit">Account anlegen</button>
+        <button type="reset" value="Reset">Eingaben zurücksetzen</button>
+    </form>
 
 </aside>
 <footer>
@@ -491,7 +491,3 @@
 </body>
 
 </html>
-
-
-
-
