@@ -316,14 +316,13 @@
         </article>
         <article>
             <header><h3>iPhone calculator tricks</h3></header>
-            <figure>
                 <iframe src="https://www.youtube.com/embed/a7rcVgb41-0" id="youtube">
                 </iframe>
-                <figcaption>
+                <p class="small">
                     iPhone Calculator Tricks on YouTube: <a
                         href="https://youtube.com/watch?v=a7rcVgb41-0">https://www.youtube.com/watch?v=a7rcVgb41-0</a>
-                </figcaption>
-            </figure>
+                </p>
+
 
 
             <p class="changes">
@@ -357,21 +356,20 @@
         <article>
             <header><h3>Taschenrechner suchen nach Modell</h3></header>
             <form>
-                <input type="search" id="modellSearch" name="modellSearch">
-                <button>Search</button>
+               <input list="calculators" name="chooseCalculator"/>
+                <datalist id="calculators">
+                   <option value="Mexico Instrument TI 30">
+                    <option value="Mexico Instrument TI 32">
+                    <option value="Mexico Instrument D*D">
+                    <option value="Casino UX5">
+                    <option value="Casino TZZ">
+                    <option value="Casino Basic">
+                    <option value="HG Calc++">
+                    <option value="HG Productive">
+                    <option value="HG GO-ON">
+               </datalist>
+                <button type="submit" id="search">Search</button>
             </form>
-            [ ]
-            Mexico Instrument TI 30
-            Mexico Instrument TI 32
-            Mexico Instrument D*D
-            Casino UX5
-            Casino TZZ
-            Casino Basic
-            HG Calc++
-            HG Productive
-            HG GO-ON
-
-            [search]
         </article>
     </section>
 
