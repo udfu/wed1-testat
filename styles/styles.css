@@ -51,6 +51,7 @@ nav {
 
 nav a {
     color: var(--main-blue);
+    font-weight: normal;
 }
 
 #italiano::before {
@@ -78,6 +79,10 @@ nav a {
     content: "";
     display: inline-block;
     background-size: 1rem 0.75rem;
+}
+
+nav ul {
+    list-style-type: none;
 }
 
 /* document */
@@ -132,9 +137,11 @@ p {
 }
 
 .changes{
+    margin-top: 8px;
     border: 1px dotted black;
     display: inline-block;
-    width: 100%
+    width: 100%;
+    font-style: italic;
 }
 
 .changes span:first-child{
@@ -150,12 +157,29 @@ p {
     font-size: smaller;
 }
 
-/* lists */
-nav ul {
-    list-style-type: none;
+:not(nav) > ul > li {
+     color: var(--main-blue);
+    font-weight: bold;
+    list-style: none;
+
+}
+
+:not(nav) > ul > li li {
+    color: black;
+    font-weight: normal;
+    margin-left: 9px;
+}
+
+:not(nav) > ul > li li:before{
+    content: '⌖ ';
 }
 
 /* table */
+thead tr{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
 
 /* forms */
 
