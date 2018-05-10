@@ -1,6 +1,7 @@
 /**
  * core
  */
+"use strict";
 var numbers = [];
 var operator;
 
@@ -8,7 +9,6 @@ var operator;
 function transportKey(val,typ,id){
     var inputElement = document.getElementById('input');
     var outputElement = document.getElementById('output');
-
     var output = outputElement.value;
     var input = inputElement.value;
 
@@ -21,14 +21,14 @@ function transportKey(val,typ,id){
         if (id === 'key-=') {
             console.log("= " + typ);
             numbers.push(Number(input));
-            if(numbers.length>=2 || numbers.length ==100){
+            if(numbers.length>=2){
                 outputElement.value = '';
                 inputElement.value = calc();
-                numbers.length = 100;
+                numbers.length = 0;
             } else {
                 outputElement.value = 'Invalid Operation';
                 inputElement.value = '';
-                numbers.length = 100;
+                numbers.length = 0;
             }
             operator = '';
         } else if (id === 'key-c') {
@@ -42,20 +42,21 @@ function transportKey(val,typ,id){
     }
     if(typ === "operator"){
         console.log(val +" "+  typ);
-        if(input != null || output != null) {
+        if(input != '' && numbers.length == 0) {
             console.log("array len: " + numbers.length + " input: " + input + " output: " + output);
-            if(numbers.length===100){
-                numbers.length = 0;
-                inputElement.value = outputElement.value;
-                input = outputElement.value;
-            }
             numbers.push(Number(input));
             operator = val;
             inputElement.value = '';
             outputElement.value = input + val;
+        } else if(numbers.length > 0){
+            operator = val;
+            outputElement.value = numbers[0] + val;
+        } else if (numbers.length == 0 && input == ''){
+            operator = val;
+            outputElement.value = val;
         }
     } else {
-        if(input!=null){
+        if(input!=''){
             inputElement.value = input + val;
         } else {
             inputElement.value = val;
@@ -65,7 +66,7 @@ function transportKey(val,typ,id){
 
 function calc() {
     var output;
-    if(numbers.length > 1 && operator != null){
+    if(numbers.length > 1 && operator != ''){
             switch(operator) {
                 case "+":
                     output = numbers[0] + numbers[1];
@@ -82,7 +83,6 @@ function calc() {
                 default:
                     output = "Invalid Operation";
             }
-
         return output;
     } else {
         return "Invalid Operation";
@@ -94,6 +94,7 @@ function calc() {
  */
 
 const initApp = function () {
+    "use strict";
     var buttons = document.getElementsByTagName('button');
     var outputElement = document.getElementById('output');
 
