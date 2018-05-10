@@ -27,7 +27,8 @@ h2 {
 
 h3:before {
     counter-increment: article;
-    content: counter(article) " ";
+    content: counter(article);
+    margin-right: 8px;
 }
 
 h3 {
@@ -231,7 +232,7 @@ tr:nth-child(2n) {
     line-height: 1.5;
 }
 
-.textbox:focus, textarea{
+.textbox:focus, text{
 border: var(--main-blue);
 }
 
