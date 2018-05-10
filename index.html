@@ -380,8 +380,8 @@
 <aside>
     <header><h2>Neuen Autor registrieren</h2></header>
 
-    <form>
-        <fieldset>
+    <form id="addautor">
+        <fieldset id="autor">
             <legend>Autor</legend>
             <ul>
                 <li>
@@ -397,25 +397,25 @@
                     </label>
                 </li>
                 <li>
-                    <label for="name">
+                    <label id="name">
                         Name<br>
                         <input type="text" name="name">
                     </label>
                 </li>
                 <li>
-                    <label for="mail">
+                    <label id="mail">
                         E-Mail<br>
                         <input type="text" name="mail">
                     </label>
                 </li>
                 <li>
-                    <label for="website">
+                    <label id="website">
                         Webseite<br>
                         <input type="text" name="website">
                     </label>
                 </li>
                 <li>
-                    <label for="birthdate">
+                    <label id="birthdate">
                         Geburtsdatum<br>
                         <input type="text" name="birthdate">
                     </label>
@@ -434,36 +434,36 @@
                     </label>
                 </li>
                 <li>
-                    <label for="profiltext">
+                    <label id="profiltext">
                         Profiltext<br>
                         <textarea name="comment" form="profiltext"></textarea>
                     </label>
                 </li>
 
                 <li>
-                    <label for="pic">
+                    <label id="pic">
                         <input name="datei" type="file" size="50" accept="image/*" multiple>
                     </label>
                 </li>
             </ul>
         </fieldset>
-        <fieldset>
+        <fieldset id="recht">
             <legend>Rechtliches</legend>
             <ul>
                 <li>
-                    <label for="copyright-text">
+                    <label id="copyright-text">
                         <input type="checkbox" id="cr-text" name="cr-text" value="Herr">
                         Ich bestätige, das ich keine Texte veröffentlichen werde, deren Urheber ich nicht bin
                     </label>
                 </li>
                 <li>
-                    <label for="copyright-pic">
+                    <label id="copyright-pic">
                         <input type="checkbox" id="cr-pic" name="cr-pic" value="Herr">
                         Ich bestätige, das ich keine Medien veröffentlichen werden, deren Urheber ich nicht bin
                     </label>
                 </li>
                 <li>
-                    <label for="swear-told-truth">
+                    <label id="swear-told-truth">
                         <input type="checkbox" id="truth" name="cr-stt" value="Herr">
                         Ich bestätige, das nur Texte veröffentlichen werde, die nach bestem Treu und glauben der
                         Wahrheit entsprechen und
@@ -479,15 +479,16 @@
 
 </aside>
 <footer>
-    Bahnhofstrasse 42,
-    8000 Zürich
+    <p id="contact">
+        <span id="foot_c">Bahnhofstrasse 42, 8000 Zürich</span><br>
+        <span id="foot_u">055 444 33 22 info@wikipraktika.com</span>
+    </p>
 
-    055 444 33 22
-    info@wikipraktika.com
-
-    Alle Inhalte von Wikipraktika stehen unter der |https://i.creativecommons.org/l/by-sa/4.0/88x31.png|
-    (http://creativecommons.org/licenses/by-sa/4.0/) Creative Commons Attribution-ShareAlike 4.0 International License
-    (http://creativecommons.org/licenses/by-sa/4.0/) und dürfen nur mit Nennung des Autors weiterverwendet werden.
+    <p id="info">
+        Alle Inhalte von Wikipraktika stehen unter der <img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+        und dürfen nur mit Nennung des Autors weiterverwendet werden.
+    </p>
 </footer>
 </body>
 
