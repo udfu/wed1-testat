@@ -8,7 +8,6 @@
     padding-left: 3px;
     padding-right: 3px;
 
-
     /*colors*/
     --main-blue: rgb(0, 96, 160);
 }
@@ -92,12 +91,12 @@ body {
     counter-reset: article;
 }
 
-a{
+a {
     color: black;
 }
 
 /* images */
-#marchant-calculator{
+#marchant-calculator {
     box-sizing: border-box;
     float: left;
     width: 200px;
@@ -105,7 +104,7 @@ a{
     margin-bottom: 20px;
 }
 
-#marchant-calculator figcaption{
+#marchant-calculator figcaption {
     box-sizing: border-box;
     width: 170px;
 }
@@ -115,7 +114,7 @@ a{
     width: 200px;
 }
 
-figcaption{
+figcaption {
     color: lightgray;
     font-size: 0.60em;
 }
@@ -136,7 +135,7 @@ p {
     margin-bottom: 7px;
 }
 
-.changes{
+.changes {
     margin-top: 8px;
     border: 1px dotted black;
     display: inline-block;
@@ -144,21 +143,20 @@ p {
     font-style: italic;
 }
 
-.changes span:first-child{
+.changes span:first-child {
     float: left;
 }
 
-.changes span:last-child{
+.changes span:last-child {
     float: right;
 }
-
 
 .small {
     font-size: smaller;
 }
 
 :not(nav) > ul > li {
-     color: var(--main-blue);
+    color: var(--main-blue);
     font-weight: bold;
     list-style: none;
 
@@ -170,35 +168,45 @@ p {
     margin-left: 9px;
 }
 
-:not(nav) > ul > li li:before{
+:not(nav) > ul > li li:before {
     content: '⌖ ';
 }
 
+ol li{
+    list-style-position: inside;
+}
 /* table */
-table{
+table {
     border-collapse: collapse;
     text-align: center;
+    width: 100%;
 }
 
-thead{
+thead {
     border-top: 3px solid black;
     border-bottom: 3px solid black;
     background-color: var(--main-blue);
     color: white;
 }
 
-thead th{
-    border-left: 0.05px solid cornflowerblue;
-    border-right: 0.05px solid cornflowerblue;
+thead th {
+    border-left: 0.05px solid rgba(226, 236, 255, 0.24);
+    border-right: 0.05px solid rgba(226, 236, 255, 0.24);
 }
 
-tbody th{
+tbody th {
     text-align: left;
 }
 
-tr{
+tr {
     box-sizing: border-box;
     height: 30px;
+}
+
+tr:nth-child(2n) {
+    background-color: rgba(0, 96, 160, 0.2);
+    border-top: 1px solid var(--main-blue);
+    border-bottom: 1px solid var(--main-blue);
 }
 
 /* forms */
@@ -214,9 +222,27 @@ tr{
     margin: 0;
 }
 
+/* svg */
+object{
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+
 /* iframe - calculator */
 #calculator {
     width: 400px;
     height: 425px;
+}
 
+/* iframe - Youtube-Video */
+#youtube{
+    border: 0;
+    width: 100%;
+    height: calc(56.25vw - 80px);
 }
