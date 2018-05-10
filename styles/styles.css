@@ -202,6 +202,19 @@ tr{
 }
 
 /* forms */
+#addautor ul li {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--main-blue);
+    color: white;
+    box-sizing: border-box;
+    border-radius: 5px 5px 5px 5px;
+    line-height: 2;
+}
+
 
 #font-size-form {
     float: right;
@@ -219,4 +232,28 @@ tr{
     width: 400px;
     height: 425px;
 
+}
+
+/* footer */
+footer{
+    background-color: var(--main-blue);
+    color: white;
+    line-height: 1.75;
+}
+
+#contact{
+    font-size: large;
+}
+#foot_c{
+    font-style: italic;
+}
+#foot_u{
+    text-decoration: underline;
+}
+
+footer a {
+    color: white;
+}
+footer img {
+    vertical-align: middle;
 }
