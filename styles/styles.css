@@ -213,6 +213,20 @@ tr:nth-child(2n) {
 #addautor ul li {
     color: gray;
     margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.textbox {
+    background-color: gainsboro;
+    border: 0;
+    border-bottom: 1px solid black;
+    width: 100%;
+    line-height: 1.5;
+}
+textarea {
+    width: 100%;
+    background-color: gainsboro;
+    height: 100px;
 }
 
 button {
@@ -223,6 +237,9 @@ button {
     line-height: 2;
 }
 
+select {
+    width: 100%;
+}
 
 #font-size-form {
     float: right;
@@ -242,7 +259,6 @@ object{
     display: block;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 
