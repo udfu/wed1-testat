@@ -53,6 +53,8 @@ nav a {
     font-weight: normal;
 }
 
+
+
 #italiano::before {
     background-image: url('../media/flag-it.svg');
     width: 1rem;
@@ -93,6 +95,14 @@ body {
 
 a {
     color: black;
+}
+
+a:hover, a:active{
+    color: steelblue;
+}
+
+a:visited{
+    color: brown;
 }
 
 /* images */
@@ -143,33 +153,30 @@ p {
     font-style: italic;
 }
 
-.changes span:first-child {
-    float: left;
-}
-
 .changes span:last-child {
     float: right;
 }
 
-.small {
-    font-size: smaller;
-}
-
-:not(nav) > ul > li {
+/*:not(nav) > ul > li*/ dt {
     color: var(--main-blue);
     font-weight: bold;
     list-style: none;
 
 }
 
+/*
 :not(nav) > ul > li li {
     color: black;
     font-weight: normal;
     margin-left: 9px;
 }
-
-:not(nav) > ul > li li:before {
+*/
+dd:before {
     content: '⌖ ';
+}
+
+dd{
+    margin-left: 9px;
 }
 
 ol li{
@@ -223,6 +230,11 @@ tr:nth-child(2n) {
     width: 100%;
     line-height: 1.5;
 }
+
+.textbox:focus, textarea{
+border: var(--main-blue);
+}
+
 textarea {
     width: 100%;
     background-color: gainsboro;
@@ -235,6 +247,10 @@ button {
     box-sizing: border-box;
     border-radius: 5px 5px 5px 5px;
     line-height: 2;
+}
+
+button:hover{
+    background-color: steelblue;
 }
 
 select {
@@ -273,8 +289,13 @@ object{
 
 /* iframe - calculator */
 #calculator {
-    width: 400px;
-    height: 425px;
+    width: 66.67%;
+    height: calc(56.25vw - 2rem);
+    background: url("../media/black-leather-texture.jpg");
+    background-size: cover;
+    overflow: hidden;
+    border: 0;
+    border-radius: 7px;
 }
 
 /* iframe - Youtube-Video */
