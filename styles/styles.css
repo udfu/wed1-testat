@@ -218,6 +218,11 @@ tr:nth-child(2n) {
 }
 
 /* forms */
+
+form li{
+    list-style-type: none;
+}
+
 #addautor ul li {
     color: gray;
     margin-bottom: 20px;

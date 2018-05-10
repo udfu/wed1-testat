@@ -314,7 +314,7 @@
                         href="https://youtube.com/watch?v=a7rcVgb41-0">https://www.youtube.com/watch?v=a7rcVgb41-0</a>
                 </figcaption>
             </figure>
-            
+
             <p class="changes">
                 <span>Zuletzt geändert von Paul Sarner</span><span><time datetime="2016-02-10T18:38">Donnerstag, 10. Februar 2016, 18:38</time></span></p>
 
@@ -346,7 +346,7 @@
         <article>
             <header><h3>Taschenrechner suchen nach Modell</h3></header>
             <form>
-                <input list="calculators" name="chooseCalculator"/>
+                <input type="search" list="calculators" name="chooseCalculator"/>
                 <datalist id="calculators">
                     <option value="Mexico Instrument TI 30">
                     <option value="Mexico Instrument TI 32">
@@ -374,7 +374,7 @@
             <ul>
                 <li>
                     <label>
-                        <input type="radio" id="" name="gender" value="Herr">
+                        <input type="radio" name="gender" value="Herr">
                         Herr
                     </label>
                 </li>
@@ -386,33 +386,33 @@
                 </li>
                 <li>
                     <label id="name">
-                        Name<br>
+                        Name
                         <input class="textbox" type="text" name="name">
                     </label>
                 </li>
                 <li>
                     <label id="mail">
-                        E-Mail<br>
-                        <input class="textbox" type="text" name="mail">
+                        E-Mail
+                        <input class="textbox" type="email" name="mail">
                     </label>
                 </li>
                 <li>
                     <label id="website">
-                        Webseite<br>
-                        <input class="textbox" type="text" name="website"
+                        Webseite
+                        <input class="textbox" type="url" name="website"
                                pattern="((http://)|(https://)|(http://www\.)|(https://www\.)).*\..{2,3}">
                     </label>
                 </li>
                 <li>
                     <label id="birthdate">
-                        Geburtsdatum<br>
+                        Geburtsdatum
                         <input class="textbox" type="text" name="birthdate">
                     </label>
                 </li>
                 <li>
                     <label for="nationality">
-                        Nationalität<br>
-                        <select id="nationality" name="nationality-select">
+                        Nationalität
+                        <select id="nationality" name="nationality-select" type="select">
                             <option selected disabled hidden>--Wählen--</option>
                             <option>Switzerland</option>
                             <option>Deutschland</option>
@@ -424,8 +424,8 @@
                 </li>
                 <li>
                     <label id="profiltext">
-                        Profiltext<br>
-                        <textarea name="comment" form="profiltext"></textarea>
+                        Profiltext
+                        <textarea name="comment" form="addautor"></textarea>
                     </label>
                 </li>
 
@@ -468,11 +468,12 @@
 
 </aside>
 <footer>
+    <address>
     <p id="contact">
-        <span id="foot_c">Bahnhofstrasse 42, 8000 Zürich</span><br>
-        <span id="foot_u">055 444 33 22 info@wikipraktika.com</span>
+        <p id="foot_c">Bahnhofstrasse 42, 8000 Zürich</p>
+        <p id="foot_u"><a href="tel:0554443322">055 444 33 22</a><a href="mailto:info@wikipraktika.com">info@wikipraktika.com</a></p>
     </p>
-
+    </address>
     <p id="info">
         Alle Inhalte von Wikipraktika stehen unter der <img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="creativecommons-logo">
         <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
